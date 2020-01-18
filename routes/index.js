@@ -1,9 +1,18 @@
+var os = require('os');
 var express = require('express');
+var con = require('../connection');
 var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  var hostname = os.hostname();
+  console.log('*** Serving from host : '+hostname)
+  var sql = "INSERT INTO pods (name) VALUES ('"+hostname+"')";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("*** hostname : "+hostname+"  record inserted in 'pods' table.");
+  });
+  res.render('index', { title: 'k8s Node SQL', hostname: hostname });
 });
 
 module.exports = router;

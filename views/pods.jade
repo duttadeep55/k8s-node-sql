@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  -var podlist = pods
+  div
+   table.table.table-hover
+    thead
+      tr: th Pods Service App
+    tbody
+      each pod in pods
+        tr
+          td=pod.name
