@@ -4,6 +4,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var mysql = require('mysql');
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "k8s",
+  password: "k8s",
+  port: "3306"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("k8s_node connected successfully to k8s_sql. Connected!");
+});
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 

@@ -16,3 +16,6 @@ An e2e nodejs and mysql project on k8s.
     docker run -d --name k8s_node_sql -p 80:8080/tcp k8s-node-sql:v1
     docker logs -f k8s_node_sql
 
+## docker-compose
+    docker-compose up
+
