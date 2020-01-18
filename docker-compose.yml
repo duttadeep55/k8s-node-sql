@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+  k8s_sql:
+    container_name: k8s_sql
+    image: mysql:5.7
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: k8s
+      MYSQL_PASSWORD: k8s
+    ports:
+      - "3306:3306"
+
+  k8s-node:
+    container_name: k8s_node
+    image: "k8s-node-sql:v1"
+    depends_on:
+      - k8s_sql
+    links:
+      - k8s_sql:k8s_sql
+    ports:
+      - "80:8080"
+
+volumes:
+  db_data: {}
