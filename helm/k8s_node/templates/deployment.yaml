@@ -30,6 +30,8 @@ spec:
           env:
           - name: MYSQL_HOST
             value:  "mysql.svc.cluster.local"
+          - name: MYSQL_PORT
+            value: 80
           ports:
             - name: http
               containerPort: {{ .Values.image.appPort }}
