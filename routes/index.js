@@ -15,4 +15,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'k8s Node SQL', hostname: hostname });
 });
 
+/* GET health check. */
+router.get('/health', function(req, res, next) {
+  res.send(200);
+});
+
 module.exports = router;
