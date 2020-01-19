@@ -12,10 +12,17 @@ An e2e nodejs and mysql project on k8s.
     PORT=8080 npm run start
 
 ## docker
-    docker build -t k8s-node-sql:v1 .
-    docker run -d --name k8s_node_sql -p 80:8080/tcp k8s-node-sql:v1
+    docker build -t k8s-node-sql:1.0.0 .
+    docker run -d --name k8s_node_sql -p 80:8080/tcp k8s-node-sql:1.0.0
     docker logs -f k8s_node_sql
 
 ## docker-compose
     docker-compose up
 
+## minikube
+    brew install minikube
+    minikube start
+    minikube dashboard
+    
+## helm
+    helm create k8s_node

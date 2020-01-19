@@ -17,7 +17,7 @@ router.get('/', function(req, res, next) {
 
 /* GET health check. */
 router.get('/health', function(req, res, next) {
-  res.send(200);
+  res.send("OK");
 });
 
 module.exports = router;
