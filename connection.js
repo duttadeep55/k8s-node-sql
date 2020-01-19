@@ -1,10 +1,10 @@
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: "localhost",
+  host: "mysql.svc.cluster.local",
   user: "k8s",
   password: "k8s",
-  port: "3306",
+  port: "80",
   database: "test"
 });
 
