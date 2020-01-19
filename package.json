@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha --reporter specs --exit \"tests/test.js\"",
+    "test": "node ./node_modules/mocha/bin/mocha --reporter spec --exit \"tests/test.js\"",
     "start": "node ./bin/www"
   },
   "dependencies": {
