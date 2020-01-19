@@ -1,7 +1,7 @@
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: "mysql.svc.cluster.local",
+  host: process.env.MYSQL_HOST || "localhost",
   user: "k8s",
   password: "k8s",
   port: "80",

@@ -27,6 +27,9 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: MYSQL_HOST
+            value:  "mysql.svc.cluster.local"
           ports:
             - name: http
               containerPort: {{ .Values.image.appPort }}
