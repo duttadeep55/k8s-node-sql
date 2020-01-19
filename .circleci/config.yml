@@ -30,7 +30,7 @@ jobs:
 
             - run: npm install
 
-            - run: npm install -g mocha # just for CircleCI
+            - run: node ./node_modules/mocha/bin/mocha test/test.js # just for CircleCI
 
             - save_cache:
                 paths:
@@ -44,8 +44,6 @@ jobs:
                 name: npm test
                 command: mocha -R spec tests/test.js
                 when: always
-
-            
 
             # Upload results
 
