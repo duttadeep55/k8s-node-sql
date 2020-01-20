@@ -18,7 +18,7 @@ An e2e nodejs and mysql project on k8s.
 
 ### minikube & helm
     > brew install minikube
-    > minikube start
+    > [default --vm-driver=hyperkit] minikube start
     > minikube dashboard
     > [optional if tiller not installed] kubectl apply -f tiller.yaml
     > brew install helm
