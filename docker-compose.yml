@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   k8s_sql:
-    container_name: mysql
+    container_name: k8s_sql
     image: mysql:5.7
     volumes:
       - db_data:/var/lib/mysql
@@ -15,13 +15,16 @@ services:
     ports:
       - "3306:3306"
 
-  k8s-node:
-    container_name: nodeapp
+  k8s_node:
+    container_name: k8s_node
     image: "duttadeep55/k8s-node-sql:latest"
+    restart: always
+    environment:
+      MYSQL_HOST: k8s_sql
     depends_on:
-      - mysql
+      - k8s_sql
     links:
-      - mysql:mysql
+      - k8s_sql:k8s_sql
     ports:
       - "80:8080"
 
