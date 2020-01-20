@@ -65,6 +65,8 @@ NAME      HOSTS                 ADDRESS   PORTS   AGE
 nodeapp   chart-example.local             80      10m
 ``` 
 
+### Screenshots
+![K8s Dashboard](https://github.com/duttadeep55/k8s-node-sql/blob/master/images/kube_dashboard.png)
 
 ### local
     > docker run -d --name k8s_sql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=test -e MYSQL_USER=k8s -e MYSQL_PASSWORD=k8s -p 3306:3306/tcp mysql:5.7
