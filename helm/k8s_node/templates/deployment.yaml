@@ -29,9 +29,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           - name: MYSQL_HOST
-            value:  "mysql.svc.cluster.local"
-          - name: MYSQL_PORT
-            value: 80
+            value: "mysql"
           ports:
             - name: http
               containerPort: {{ .Values.image.appPort }}

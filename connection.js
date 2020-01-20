@@ -4,7 +4,7 @@ var con = mysql.createConnection({
   host: process.env.MYSQL_HOST || "localhost",
   user: "k8s",
   password: "k8s",
-  port: process.env.MYSQL_HOST || 3306,
+  port: 3306,
   database: "test"
 });
 
